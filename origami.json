@@ -1,14 +1,12 @@
 {
-    "description": "Component Blueprint",
-    "origamiType": "module",
-    "origamiVersion": 1,
-    "support": "https://github.com/Pearson-Higher-Ed/o-component-blueprint/issues",
-    "supportStatus": "experimental",
-    "demos": [
-        {
-            "path": "/demos/demo.html",
-            "expanded": true,
-            "description": ""
-        }
-    ]
+  "description": "Calendar",
+  "origamiType": "module",
+  "origamiVersion": 1,
+  "support": "https://github.com/Pearson-Higher-Ed/o-calendar/issues",
+  "supportStatus": "experimental",
+  "demos": [{
+    "path": "/demos/demo.html",
+    "expanded": true,
+    "description": ""
+  }]
 }
