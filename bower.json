@@ -1,5 +1,5 @@
 {
-  "name": "o-calendar",
+  "name": "o-component-blueprint",
   "dependencies": {},
   "main": [
     "main.scss",

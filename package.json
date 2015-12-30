@@ -1,5 +1,5 @@
 {
-  "name": "o-calendar",
+  "name": "o-component-blueprint",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -22,9 +22,5 @@
     "mocha": "^2.1.0",
     "sinon": "^1.17.1",
     "webpack": "^1.12.2"
-  },
-  "dependencies": {
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3"
   }
 }
