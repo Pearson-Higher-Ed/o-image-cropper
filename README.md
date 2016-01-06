@@ -18,12 +18,12 @@ mv README.md.template README.md
 2. Search `o-component-blueprint` and replace with `o-your-component`:
 
   ```
-  find . -name '*.*' -type f -print -exec sed -i '' 's/o-component-blueprint/o-your-component/g' {} \;
+  grep -rl o-component-blueprint | xargs sed -i 's/o-component-blueprint/o-your-component/g'
   ```
 3. Search `oComponentBlueprint` and replace with `oYourComponent`:
 
   ```
-  find . -name '*.*' -type f -print -exec sed -i '' 's/oComponentBlueprint/oYourComponent/g' {} \;
+  grep -rl oComponentBlueprint | xargs sed -i 's/oComponentBlueprint/oYourComponent/g'
   ```
 4. Re-name the component in the description field of `origami.json`
 
