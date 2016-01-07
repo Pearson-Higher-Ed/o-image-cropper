@@ -15,15 +15,27 @@ mv README.md.template README.md
   ```
   git clone https://github.com/Pearson-Higher-Ed/o-component-blueprint.git o-your-component
   ```
-2. Search `o-component-blueprint` and replace with `o-your-component`:
+2. Search `o-component-blueprint` and replace with `o-your-component`. If you are using MacOSX or BSD-flavor Unix, use this command:
 
   ```
-  grep -rl o-component-blueprint | xargs sed -i 's/o-component-blueprint/o-your-component/g'
+  find . -name '*.*' -type f -print -exec sed -i '' 's/o-component-blueprint/o-your-component/g' {} \;
   ```
-3. Search `oComponentBlueprint` and replace with `oYourComponent`:
+
+  For GNU-Linux OSes, use:
 
   ```
-  grep -rl oComponentBlueprint | xargs sed -i 's/oComponentBlueprint/oYourComponent/g'
+  find . -name '*.*' -type f -print -exec sed -i 's/o-component-blueprint/o-your-component/g' {} \;
+  ```
+3. Search `oComponentBlueprint` and replace with `oYourComponent`. For MacOSX and BSD:
+
+  ```
+  find . -name '*.*' -type f -print -exec sed -i '' 's/oComponentBlueprint/oYourComponent/g' {} \;
+  ```
+
+  and for GNU-Linux use:
+
+  ```
+  find . -name '*.*' -type f -print -exec sed -i 's/oComponentBlueprint/oYourComponent/g' {} \;
   ```
 4. Re-name the component in the description field of `origami.json`
 
