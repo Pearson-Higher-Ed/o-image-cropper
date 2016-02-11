@@ -1,60 +1,80 @@
-# o-component-blueprint
+# o-image-cropper
+Vanilla JavaScript Image Crop Component
+====================================
 
-Project structure for new Origami components.
+Setup / Installation
+--------------------
 
-**Note:** This is not a usable Origami component. Once you have completed the steps for creating and deploying the new module, replace this README with the provided template:
+1. Include the provided JS and CSS files in your HTML document:
 
-```
-mv README.md.template README.md
-```
+    <script type="text/javascript" src="cropper.js"></script>
+    <link rel="stylesheet" href="cropper.css"></div>
 
-### Creating a new Origami Module
+2. Add your image to your document. Absolutely no other HTML markup is required:
 
-1. Clone this repository into a new folder:
+    <img src="your-image.jpg" id="my_image" />
 
-  ```
-  git clone https://github.com/Pearson-Higher-Ed/o-component-blueprint.git o-your-component
-  ```
-2. Search `o-component-blueprint` and replace with `o-your-component`. If you are using MacOSX or BSD-flavor Unix, use this command:
+3. Initialize the Cropper, and you're good to go!
 
-  ```
-  find . -name '*.*' -type f -print -exec sed -i '' 's/o-component-blueprint/o-your-component/g' {} \;
-  ```
+    <script type="text/javascript">
+        document.getElementById('my_image').onload = function () {
+            new Cropper(this, {
+                // options
+            });
+        }
+    </script>
 
-  For GNU-Linux OSes, use:
+Available options
+-----------------
 
-  ```
-  find . -name '*.*' -type f -print -exec sed -i 's/o-component-blueprint/o-your-component/g' {} \;
-  ```
-3. Search `oComponentBlueprint` and replace with `oYourComponent`. For MacOSX and BSD:
+This is the list of options you can use to better interact with the script.
+You use them by providing `name: value` pairs when instantiating the Cropper.
+An usage example for each option is included below, and you can also see them all
+in action on the **[demo page](http://dev.vizuina.com/cropper/)**.
 
-  ```
-  find . -name '*.*' -type f -print -exec sed -i '' 's/oComponentBlueprint/oYourComponent/g' {} \;
-  ```
+**********************************************************
 
-  and for GNU-Linux use:
+Option name:  update
+Type:         Function
+Description:  A function the Cropper calls automatically whenever the crop coordinates are changed.
 
-  ```
-  find . -name '*.*' -type f -print -exec sed -i 's/oComponentBlueprint/oYourComponent/g' {} \;
-  ```
-4. Re-name the component in the description field of `origami.json`
+    new Cropper(image, {
+        update: function (coordinates) {
+            /**
+             * Do something with the crop coordinates, which are given as a simple JS object with four keys:
+             * {x: 100, y: 200, width: 400, height: 200}
+             */
+            console.log(coordinates);
+        }
+    });
 
-### Deploying for the first time
+**********************************************************
 
-1. Create a new repository ([GitHub](https://github.com/Pearson-Higher-Ed) for OSS or [Stash](https://devops-tools.pearson.com/stash/) for internal components). If you are deploying to GitHub, you may need to make a request to one of the organization's [owners](https://github.com/orgs/Pearson-Higher-Ed/teams/owners) to create the repository.
-2. Delete the existing Git directory: `rm -Rf .git`
-3. Initialize a new local Git repository: `git init .`
-4. Add the remote repository:
+Option name: ratio
+Type:        Object
+Description: Use this option if you want to restrict the aspect ratio of the crop area.
 
-  ```
-  git remote add origin https://github.com/Pearson-Higher-Ed/o-your-component.git
-  ```
-5. Install dependencies: `obt install`
-6. Test and verify: `obt test && obt verify`
-7. Commit and push: `git add . && git commit -m "Initial commit" && git push origin master`
+    new Cropper(image, {
+        ratio: {
+            width:  16,
+            height: 9
+        }
+    });
 
-----
+**********************************************************
+
+Option name: min_width / max_width / min_height / max_height
+Type:        Integer
+Description: Use any of these options to force the crop area to gave the desired minimum / maximum width / height.
+
+    new Cropper(image, {
+        min_width:  400,
+        min_height: 300,
+        max_width:  800,
+        max_height: 600
+    });
+
 
 ## License
 
-This is a fork of [Financial-Times/o-component-blueprint](https://github.com/Financial-Times/o-component-blueprint), which is published by the Financial Times under the [MIT license](http://opensource.org/licenses/MIT).
+This is a fork of [Financial-Times/o-image-cropper](https://github.com/Financial-Times/o-image-cropper), which is published by the Financial Times under the [MIT license](http://opensource.org/licenses/MIT).

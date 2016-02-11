@@ -1,4 +1,10 @@
 $o-assets-global-path: '/bower_components/';
-$o-component-blueprint-is-silent: false;
+$o-image-cropper-is-silent: false;
 
 @import '../../main';
+
+.o-avatar-demo-image {
+	width: 800px;
+	height: 800px;
+	font: 16px arial, sans-serif;
+}

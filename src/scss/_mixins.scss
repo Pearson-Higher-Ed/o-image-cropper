@@ -1,12 +1,12 @@
 ////
-/// @group o-component-blueprint
-/// @link https://origami.pearsoned.com/registry/components/o-component-blueprint
+/// @group o-image-cropper
+/// @link https://origami.pearsoned.com/registry/components/o-image-cropper
 ////
 
 /// Hello world
 ///
 /// @param {String} $who [world]
-@mixin oComponentBlueprintHello($who: world) {
+@mixin oImageCropperHello($who: world) {
 	.foo {
 		content: 'Hello, #{$who}!';
 	}

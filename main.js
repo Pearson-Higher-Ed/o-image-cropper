@@ -1,5 +1,3 @@
-import Foo from './src/js/Foo';
-
-document.addEventListener('o.DOMContentLoaded', () => {
-	Foo.init();
-});
+module.exports = {
+	ImageCropper: require('./src/js/ImageCropper')
+};

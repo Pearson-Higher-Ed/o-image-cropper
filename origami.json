@@ -1,8 +1,8 @@
 {
-    "description": "Component Blueprint",
+    "description": "Image Cropping component bought on binpress",
     "origamiType": "module",
     "origamiVersion": 1,
-    "support": "https://github.com/Pearson-Higher-Ed/o-component-blueprint/issues",
+    "support": "https://github.com/Pearson-Higher-Ed/o-image-cropper/issues",
     "supportStatus": "experimental",
     "demos": [
         {
