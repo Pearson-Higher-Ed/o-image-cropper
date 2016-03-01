@@ -13,9 +13,11 @@
     position: relative;
     cursor: crosshair;
 }
+
 .cropper-area-handle {
-    width: 6px;
-    height: 6px;
+    width: 12px;
+    height: 12px;
+		border-radius: 100%;
     background: yellow;
 }
 .cropper-overlay {

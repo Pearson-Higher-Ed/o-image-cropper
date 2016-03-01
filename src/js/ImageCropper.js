@@ -10,6 +10,7 @@ var Cropper = (function () {
         min_height: 0,
         max_width:  0,
         max_height: 0,
+        one_box: false,  // one_box is used when the desire is to only have one crop box that is then modified but never replaced
         ratio:      {width: 0, height: 0}
     };
 
@@ -340,7 +341,7 @@ var Cropper = (function () {
         this.dragStart = coordinates;
 
         // if the mousedown event was triggered on the crop area itself, it means the user is initiating a movement instead of a resize
-        if (target == this.crop_area) {
+        if (this.options.one_box || target == this.crop_area) {
             this.moving = true;
             return;
         }
