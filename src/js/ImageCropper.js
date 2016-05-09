@@ -10,7 +10,7 @@ var Cropper = (function () {
         min_height: 0,
         max_width:  0,
         max_height: 0,
-        one_box: false,  // one_box is used when the desire is to only have one crop box that is then modified but never replaced
+        one_box: false,
         ratio:      {width: 0, height: 0}
     };
 
@@ -232,17 +232,16 @@ var Cropper = (function () {
      */
     C.prototype.createHandles = function (crop_area) {
         var self  = this;
-        var delta = '-3px';
-
+        var delta = '0px';
         var handles = {
             'nw': {left: delta,  top: delta},
-            'n' : {left: '50%',  top: delta,    marginLeft: delta},
+            // 'n' : {left: '10%',  top: delta,    marginLeft: delta},
             'ne': {right: delta, top: delta},
-            'e' : {right: delta, top: '50%',    marginTop: delta},
+            // 'e' : {right: delta, top: '50%',    marginTop: delta},
             'se': {right: delta, bottom: delta, zIndex: 10},
-            's' : {left: '50%',  bottom: delta, marginLeft: delta},
-            'sw': {left: delta,  bottom: delta},
-            'w' : {left: delta,  top: '50%',    marginTop: delta}
+            // 's' : {left: '50%',  bottom: delta, marginLeft: delta},
+            'sw': {left: delta,  bottom: delta}
+            // 'w' : {left: delta,  top: '50%',    marginTop: delta}
         };
 
         for (var position in handles) {
